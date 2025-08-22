@@ -70,7 +70,7 @@ Focused on clean layout & interactivity
 Published the report to Power BI Service for accessibility
 
 
-📊 Final Dashboard Preview
+📊 Final Dashboard Preview ( 'https://github.com/hemantgode44/Ola-Uber-Trip-Anlalysis/blob/main/uber%20dashboard.png')
 
 📌 Key Insights I Found
 🚖 117K total trips generated $1.8M+ in revenue
