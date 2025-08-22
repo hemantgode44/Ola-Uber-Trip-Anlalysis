@@ -57,7 +57,7 @@ SWITCH(
     BLANK()
 )
 
-Step 5: Dashboard Design
+🔹Step 5: Dashboard Design
 
 Added KPI cards for Trips, Fare, Duration, Distance, Night %
 Used Bar Charts (Trips by Location)
