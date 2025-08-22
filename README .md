@@ -41,8 +41,8 @@ Standardized `payment_type` column (Cash, Uber Pay, Google Pay, Amazon Pay).
 **KPIs Calculated**  
 ```DAX
 Total Trips = COUNT('Trip Details'[Trip ID])
-Total Fare = SUM('Trip Details'[Fare])
-Total Duration = SUM('Trip Details'[Duration])
+Total Fare 
+Total Duration
 Total Distance = SUM('Trip Details'[Distance])
 ```
 
@@ -99,28 +99,5 @@ Published the report to **Power BI Service** for accessibility.
 - **DAX** → KPIs, Calculated Columns & Measures  
 - **Power BI Service** → Report Publishing & Sharing  
 
----
 
-## 📂 Repository Structure
-```
-Uber-Trips-Analysis/
-│-- Data/              # Raw dataset (if shared)
-│-- Reports/           # Power BI files (.pbix)
-│-- Images/            # Dashboard screenshots
-│-- README.md          # Project Documentation
-```
-
----
-
-## 🚀 How to Use
-1. Clone this repo  
-2. Open the `.pbix` file in **Power BI Desktop**  
-3. Connect/Replace with your own trip dataset  
-4. Refresh & explore the dashboard  
-
----
-
-## 🙌 Acknowledgements
-Thanks to **Power BI, DAX, and Power Query** for enabling smooth analysis and visualization.  
-Inspired by real-world ride-hailing analytics.
 
