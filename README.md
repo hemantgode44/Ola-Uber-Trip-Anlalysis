@@ -13,10 +13,12 @@ $1.8M Total Fare
 8.7% Night Shift Percentage
 
 🔎 Filters
+
 Month (Short Name + Year) → Analyze trends by month & year.
 Location → Focus on specific pickup/drop-off areas.
 
 📈 Dashboard Insights
+
 1. Total Duration by Location
 Bar chart showing trip durations by pickup location.
 Top areas: Penn Station, Upper East Side, LaGuardia Airport.
@@ -43,16 +45,15 @@ Peak hours: 10:00 AM – 8:00 PM
 Breakdown of total fares:
 Example: Jamaica Bay generated $763 on Saturday.
 
+
 🚀 Usage
 
 Use filters to slice data by time period and location.
 Track customer payment preferences.
 Identify high-demand zones for driver allocation.
-
 Spot peak hours for better resource planning.
 
 🛠️ Tech Stack
 
 Power BI – Data visualization & dashboarding
-
 Dataset – Uber trips data (sample)
