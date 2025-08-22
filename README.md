@@ -1,59 +1,87 @@
-🚖 Uber Analytics Dashboard
+🚖  Uber Trips Analysis – Power BI Project
+📌 Project Overview
 
-📌 Overview
-The Uber Analytics Dashboard provides insights into trip performance, customer behavior, and operational efficiency. It tracks key KPIs such as trips, fare, duration, and distance, and visualizes trends by location, time, payment method, and shift.
-This project is designed for data analysis and decision-making, helping optimize resource allocation, understand rider preferences, and identify demand hotspots.
+I built this end-to-end Power BI project to analyze Ola/Uber trip data and generate business insights.
+The goal was to track KPIs, identify travel patterns, understand payment preferences, and visualize trip demand over time and location.
 
-📊 Key Metrics
+This project covers everything from data preparation to dashboard design and publishing on Power BI Service.
 
-117K Total Trips
-$1.8M Total Fare
-1.9M Total Duration (minutes)
-394K Total Distance (miles)
-8.7% Night Shift Percentage
+🎯 Business Goals
 
-🔎 Filters
-
-Month (Short Name + Year) → Analyze trends by month & year.
-Location → Focus on specific pickup/drop-off areas.
-
-📈 Dashboard Insights
-
-1. Total Duration by Location
-Bar chart showing trip durations by pickup location.
-Top areas: Penn Station, Upper East Side, LaGuardia Airport.
-
-2. Total Duration by Pay Method
-   Donut chart for payment methods:
-   Uber Pay (64.69%) dominates.
-   Cash, Google Pay, Amazon Pay are less common.
-
-4. Total Duration by Shift
-Day vs Night analysis:
-Day trips: ~91%
-Night trips: ~9%
-
-4. Total Trips by Day Name
-Line chart of weekly trends:
-Saturday is the busiest day.
-
-5. Total Trips by Pickup Time
-Hourly distribution of trips:
-Peak hours: 10:00 AM – 8:00 PM
-
-6. Fare Drill-Down by Location & Day
-Breakdown of total fares:
-Example: Jamaica Bay generated $763 on Saturday.
+Track KPIs such as Total Trips, Total Fare, Duration, Distance, and Night Trip %
+Provide geographic insights (top locations & hotspots)
+Analyze time-based patterns (day-wise and hourly)
+Break down payment methods used by riders
+Deliver an interactive and user-friendly dashboard for decision-making
 
 
-🚀 Usage
+🛠️ My Approach
+🔹 Step 1: Data Loading
+Imported two tables into Power BI:
+Trip Details (Fact) → trip ID, start/end time, fare, distance, payment type
+Location (Dimension) → location details
+Standardized payment_type column (Cash, Uber Pay, Google Pay, Amazon Pay)
 
-Use filters to slice data by time period and location.
-Track customer payment preferences.
-Identify high-demand zones for driver allocation.
-Spot peak hours for better resource planning.
+🔹 Step 2: Data Cleaning (Power Query)
+Changed column data types (date, text, numeric)
+Removed unnecessary rows
+Created Day/Night classification for trips
+Replaced inconsistent values
 
-🛠️ Tech Stack
+🔹 Step 3: Data Modeling
+Built a Date Table with DAX to enable time intelligence
+Connected Fact and Dimension tables using relationships
 
-Power BI – Data visualization & dashboarding
-Dataset – Uber trips data (sample)
+🔹Step 4: DAX Measures & Columns
+
+I wrote multiple DAX measures to calculate KPIs:
+Total Trips = COUNT('Trip Details'[Trip ID])
+Total Fare = SUM('Trip Details'[Fare])
+Total Duration = SUM('Trip Details'[Duration])
+Total Distance = SUM('Trip Details'[Distance])
+
+🔹Night Trips %:
+Night Trip % =
+VAR Nightcount = CALCULATE([Total Trips], 'Trip Details'[Shift] = "Night")
+RETURN DIVIDE(Nightcount, [Total Trips], 0)
+
+🔹Calculated Column for Shift (Day/Night):
+Shift =
+VAR _hr = HOUR('Trip Details'[Pickup Time])
+RETURN
+SWITCH(
+    TRUE(),
+    _hr>=6 && _hr<=21, "Day",
+    _hr>21 && _hr<=23, "Night",
+    _hr>=0 && _hr<6, "Night",
+    BLANK()
+)
+
+Step 5: Dashboard Design
+
+Added KPI cards for Trips, Fare, Duration, Distance, Night %
+Used Bar Charts (Trips by Location)
+Used Line Charts (Trips by Day & Pickup Time)
+Used Donut Charts (Payment Type & Day/Night share)
+Created a Filters Panel (Month, Day, Location slicers)
+Focused on clean layout & interactivity
+
+🔹 Step 6: Publishing
+Published the report to Power BI Service for accessibility
+
+
+📊 Final Dashboard Preview
+
+📌 Key Insights I Found
+🚖 117K total trips generated $1.8M+ in revenue
+⏱️ Trips took 1.9M minutes in total covering 394K distance
+🌙 Only 8.7% trips were night rides (mostly in urban zones)
+💳 Uber Pay + Google Pay = 99% of payments (cash almost negligible)
+📍 Penn Station & Upper East Side were the busiest pickup spots
+📈 Peak demand on Saturdays & afternoons
+
+🧑‍💻 Skills Demonstrated
+Power BI Desktop → Data Modeling, Report Design
+Power Query → Cleaning & Transformation
+DAX → KPIs, Calculated Columns & Measures
+Power BI Service → Report Publishing & Sharing
