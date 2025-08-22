@@ -36,9 +36,9 @@ Connected Fact and Dimension tables using relationships
 
 I wrote multiple DAX measures to calculate KPIs:
 Total Trips = COUNT('Trip Details'[Trip ID])
-Total Fare = SUM('Trip Details'[Fare])
-Total Duration = SUM('Trip Details'[Duration])
-Total Distance = SUM('Trip Details'[Distance])
+Total Fare 
+Total Duration 
+Total Distance 
 
 🔹Night Trips %:
 Night Trip % =
@@ -77,8 +77,7 @@ Published the report to Power BI Service for accessibility
 ⏱️ Trips took 1.9M minutes in total covering 394K distance
 🌙 Only 8.7% trips were night rides (mostly in urban zones)
 💳 Uber Pay + Google Pay = 99% of payments (cash almost negligible)
-📍 Penn Station & Upper East Side were the busiest pickup spots
-📈 Peak demand on Saturdays & afternoons
+
 
 🧑‍💻 Skills Demonstrated
 Power BI Desktop → Data Modeling, Report Design
